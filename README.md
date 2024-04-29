@@ -23,7 +23,9 @@ gcc -shared -fPIC -I/opt/Nuke<version>/include -o build/StickyProject.so StickyP
 
 ## Add to menu.py
 ```python
-nuke.pluginAddPath('StickyProject/build/Nuke{}'.format(nuke.NUKE_VERSION_MAJOR))
+nuke.pluginAddPath('StickyProject/build/Nuke{}.{}'.format(
+    nuke.NUKE_VERSION_MAJOR, nuke.NUKE_VERSION_MINOR))
+
 nuke.load('StickyProject')
 nuke.menu('Nodes').menu('Nukepedia').menu('3d').addCommand('StickyProject')
 ```
